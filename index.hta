@@ -1,12 +1,13 @@
 <html>
 <head>
    <meta charset="utf-8">
-   <meta http-equiv="x-ua-compatible" content="ie=9">
+   <meta http-equiv="x-ua-compatible" content="ie=11">
    <hta:application id="ohta"
     applicationname="myapp"
     sysmenu="yes"
     caption="yes"
     singleinstance="yes"
+    icon=""
    >
    <link rel="stylesheet" type="text/css" href="pico.min.css">
    <script>
@@ -14,11 +15,15 @@
       function foo(){
          alert(JSON.stringify(ohta));
       }
+      window.setTimeout(function(){
+         document.getElementById('text').innerHTML = '标题❤️😀';
+      }, 3000);
    </script>
-   <title>标题</title>
+   <title>中国专利电子申请网 IE 设置助手</title>
 </head>
 <body scroll="no">
-<input type="button" name="btn" onClick="foo();" value="弹窗">
-<input type="button" name="btn" onClick="self.close();" value="关闭">
+   <main class="container">
+      <h1>当前设置</h1>
+   </main>
 </body>
 </html>
