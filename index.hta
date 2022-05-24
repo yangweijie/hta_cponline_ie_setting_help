@@ -1,0 +1,24 @@
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=9">
+   <hta:application id="ohta"
+    applicationname="myapp"
+    sysmenu="yes"
+    caption="yes"
+    singleinstance="yes"
+   >
+   <link rel="stylesheet" type="text/css" href="pico.min.css">
+   <script>
+      // alert("sysmenu    = " + ohta.sysmenu);
+      function foo(){
+         alert(JSON.stringify(ohta));
+      }
+   </script>
+   <title>标题</title>
+</head>
+<body scroll="no">
+<input type="button" name="btn" onClick="foo();" value="弹窗">
+<input type="button" name="btn" onClick="self.close();" value="关闭">
+</body>
+</html>
