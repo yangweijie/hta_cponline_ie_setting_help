@@ -13,11 +13,13 @@
    <script>
       // alert("sysmenu    = " + ohta.sysmenu);
       function foo(){
-         alert(JSON.stringify(ohta));
+        alert(JSON.stringify(ohta));
       }
     //   window.setTimeout(function(){
     //      document.getElementById('text').innerHTML = '标题❤️😀';
     //   }, 3000);
+      var WshShell = new ActiveXObject("WScript.Shell");
+      alert(WshShell.RegRead('HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains'));
    </script>
    <title>中国专利电子申请网 IE 设置助手</title>
 </head>

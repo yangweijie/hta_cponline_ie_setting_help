@@ -101,6 +101,8 @@ Value  Setting
 ^ indicates a setting that only has two options, enabled or disabled
 
 
+[面向高级用户的 Windows 注册表信息](https://docs.microsoft.com/zh-cn/troubleshoot/windows-server/performance/windows-registry-advanced-users)
+
 ### 明细
 - 受信任的站点 添加 www.baidu.com
 

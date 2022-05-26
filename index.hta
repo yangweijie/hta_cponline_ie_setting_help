@@ -1,7 +1,7 @@
 <html>
 <head>
    <meta charset="utf-8">
-   <meta http-equiv="x-ua-compatible" content="ie=11">
+   <meta http-equiv="x-ua-compatible" content="ie=9">
    <hta:application id="ohta"
     applicationname="myapp"
     sysmenu="yes"
@@ -13,11 +13,14 @@
    <script>
       // alert("sysmenu    = " + ohta.sysmenu);
       function foo(){
-         alert(JSON.stringify(ohta));
+        alert(JSON.stringify(ohta));
       }
     //   window.setTimeout(function(){
     //      document.getElementById('text').innerHTML = '标题❤️😀';
     //   }, 3000);
+      var WshShell = new ActiveXObject("WScript.Shell");
+      var a = WshShell.RegRead("HKCU\\Software\\Microsoft\\Internet Explorer\\PageSetup\\headeraa");
+      alert(a);
    </script>
    <title>中国专利电子申请网 IE 设置助手</title>
 </head>
@@ -27,50 +30,71 @@
       <table>
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">Heading</th>
-            <th scope="col">Heading</th>
-            <th scope="col">Heading</th>
-            <th scope="col">Heading</th>
-            <th scope="col">Heading</th>
+            <th scope="col">项目</th>
+            <th scope="col">期望</th>
+            <th scope="col">实际</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row">1</th>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-          </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
+            <td>兼容性视图设置 (没有表示没设置) HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\BrowserEmulation\ClearableListData\UserFilte</td>
+            <td>
+                <ul>
+                    <li>cnipa.gov.cn</li>
+                    <li>sipo.gov.cn</li>
+                    <li>202.96.46.92</li>
+                    <li>在兼容性视图中显示 Intranet 网站</li>
+                </ul>
+            </td>
             <td>Cell</td>
           </tr>
           <tr>
-            <th scope="row">1</th>
+            <td>可信站点网站 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains</td>
+            <td>
+                <ul>
+                    <li>cponline.cnipa.gov.cn</li>
+                    <li>interactive.cponline.cnipa.gov.cn</li>
+                    <li>interactive.cponline.sipo.gov.cn</li>
+                    <li>202.96.46.92</li>
+                    <li>"Flags"=dword:00000043 [ x ] 对该区域中的所有站点要求服务器验证（https:）</li>
+                </ul>
+            </td>
             <td>Cell</td>
+          </tr>
+          <tr>
+            <td>
+              受信任的站点区域 - ActiveX 控件和插件 
+              <br>
+              \HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\2
+              <br>
+              0 启用 3 禁用 1 提示  10000 管理员认可
+            </td>
+            <td>
+              <ul>
+                <li>2201 ActiveX 控件自动提示</li>
+                <li>1405 对标记为可安全执行脚本的 ActiveX 控件执行脚本</li>
+                <li>1201 对未标记为可安全执行脚本的 ActiveX 控件初始化并执行脚本</li>
+                <li>2000 二进制文件和脚本行为</li>
+                <li>120B 仅允许批准的域在未经提示的情况下使用 ActiveX</li>
+                <li>1004 下载未签名的 ActiveX 控件</li>
+                <li>1001 下载已签名的 ActiveX 控件</li>
+                <li>2702 允许 ActiveX 筛选</li>
+                <li>1209 允许 Scriptlet</li>
+                <li>1208 允许以前未使用的 ActiveX 控件而不提示</li>
+                <li>1200 运行 ActiveX 控件和插件</li>
+                <li>270C 在 ActiveX 控件上运行反恶意软件</li>
+                <li>120A 在没有使用外部媒体播放器的网页上显示视频和动画</li>
+                <li>"CurrentLevel"=dword:00010000 重置自定义设置为： 低</li>
+              </ul>
+            </td>
             <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
-            <td>Cell</td>
+          </tr>
+          <tr>
+            <td>OCX控件</td>
+            <td>安装</td>
+            <td>未装</td>
           </tr>
         </tbody>
-        <tfoot>
-          <tr>
-            <th scope="col">#</th>
-            <td scope="col">Total</td>
-            <td scope="col">Total</td>
-            <td scope="col">Total</td>
-            <td scope="col">Total</td>
-            <td scope="col">Total</td>
-          </tr>
-        </tfoot>
       </table>
    </main>
 </body>
